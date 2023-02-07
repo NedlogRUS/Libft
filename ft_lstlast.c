@@ -6,7 +6,7 @@
 /*   By: apanikov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:10:42 by apanikov          #+#    #+#             */
-/*   Updated: 2023/02/07 18:49:41 by apanikov         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:37:12 by apanikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstlast(t_list *lst)
 
 	j = lst;
 	if (!j)
-		return 0;
+		return (0);
 	while (j->next != 0)
 		j = j->next;
 	return (j);

@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apanikov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 19:45:50 by apanikov          #+#    #+#             */
-/*   Updated: 2023/02/07 19:37:59 by apanikov         ###   ########.fr       */
+/*   Created: 2023/02/07 17:14:58 by apanikov          #+#    #+#             */
+/*   Updated: 2023/02/07 18:40:20 by apanikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
+	t_list	*j;
+	t_list	*r;
 
-	new = (t_list *)malloc(sizeof(t_list));
+	j = lst;
+	if (!lst)
+		return (0);
+	new = ft_lstnew((*f)(j->content));
 	if (!new)
 		return (0);
-	new->content = content;
-	new->next = 0;
-	return (new);
+	r = new;
+	j = j->next;
+	while (j)
+	{
+		new->next = ft_lstnew((*f)(j->content));
+		if (!new->next)
+		{
+			ft_lstdelone(r, (*del));
+			return (0);
+		}
+		new = new->next;
+		j = j->next;
+	}
+	return (r);
 }
