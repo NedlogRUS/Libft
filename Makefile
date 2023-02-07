@@ -6,7 +6,7 @@
 #    By: apanikov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/22 16:28:31 by apanikov          #+#    #+#              #
-#    Updated: 2023/02/02 21:28:24 by apanikov         ###   ########.fr        #
+#    Updated: 2023/02/07 18:37:50 by apanikov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 	  ft_putchar_fd.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_putstr_fd.c\
 	  ft_putendl_fd.c ft_putnbr_fd.c ft_calloc.c
 SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
-		ft_lstdelone.c ft_lstclear.c
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJ = $(SRC:%.c=%.o)
 OBJB = $(SRCB:.c=.o)
 AR = ar rcs
@@ -37,9 +37,9 @@ CFLAGS = -Wall -Wextra -Werror
 $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRCB)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJB)
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(SRCB)
+#	gcc -nostartfiles -shared -o libft.so $(OBJ) $(OBJB)
 
 all: $(NAME)
 

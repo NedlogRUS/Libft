@@ -6,14 +6,14 @@
 /*   By: apanikov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:47:28 by apanikov          #+#    #+#             */
-/*   Updated: 2023/02/02 21:23:12 by apanikov         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:42:47 by apanikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h" 
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if(!new)
+	if (!new)
 		return ;
 	new->next = *lst;
 	*lst = new;

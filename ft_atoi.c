@@ -6,10 +6,10 @@
 /*   By: apanikov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:05:01 by apanikov          #+#    #+#             */
-/*   Updated: 2023/01/24 17:05:19 by apanikov         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:04:32 by apanikov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	out;
 	int	sign;

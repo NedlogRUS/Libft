@@ -1,10 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apanikov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 17:10:42 by apanikov          #+#    #+#             */
+/*   Updated: 2023/02/07 18:49:41 by apanikov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if(!lst)
+	t_list	*j;
+
+	j = lst;
+	if (!j)
 		return 0;
-	while(lst->next != 0)
-		lst = lst->next;
-	return(lst);
+	while (j->next != 0)
+		j = j->next;
+	return (j);
 }
